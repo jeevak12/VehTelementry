@@ -1,0 +1,9 @@
+{
+  "name": "fleet-api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Fleet & Telemetry API (plan.md Section 7.5 / Section 9)",
+  "main": "src/index.js",
+  "scripts": { "start": "node src/index.js", "dev": "node --watch src/index.js" },
+  "dependencies": { "express": "^4.19.2", "ioredis": "^5.4.1" }
+}

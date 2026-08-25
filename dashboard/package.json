@@ -1,0 +1,9 @@
+{
+  "name": "dashboard",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Fleet Operator Dashboard (plan.md Section 7.7 / Section 12) — plain HTML/CSS/vanilla JS, no build step. Leaflet is loaded via CDN in index.html.",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
