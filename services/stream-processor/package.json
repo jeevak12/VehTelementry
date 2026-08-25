@@ -1,0 +1,9 @@
+{
+  "name": "stream-processor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Stream Processing Engine (plan.md Section 7.3)",
+  "main": "src/index.js",
+  "scripts": { "start": "node src/index.js" },
+  "dependencies": { "kafkajs": "^2.2.4", "ioredis": "^5.4.1" }
+}

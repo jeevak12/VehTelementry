@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AlertEvent",
+  "type": "object",
+  "required": ["alertId", "vehicleId", "type", "severity", "triggeredAt"],
+  "properties": {
+    "alertId": { "type": "string" },
+    "vehicleId": { "type": "string" },
+    "type": { "type": "string", "enum": ["OVERSPEED", "LOW_BATTERY", "TELEMETRY_LOSS"] },
+    "severity": { "type": "string", "enum": ["WARNING", "CRITICAL"] },
+    "triggeredAt": { "type": "string", "format": "date-time" },
+    "clearedAt": { "type": ["string", "null"], "format": "date-time" },
+    "details": { "type": "object" }
+  }
+}

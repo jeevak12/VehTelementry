@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fleet Operator Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Leaflet (map rendering) via CDN — no build step, no API key required -->
+  <link rel="stylesheet" href="leaflet.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Fleet Operator Dashboard</h1>
+    <div class="filters">
+      <label class="visually-hidden" for="statusFilter">Filter by status</label>
+      <select id="statusFilter" data-testid="status-filter">
+        <option value="">All statuses</option>
+        <option value="MOVING">Moving</option>
+        <option value="STOPPED">Stopped</option>
+        <option value="OFFLINE">Offline</option>
+        <option value="ALERTING">Alerting</option>
+      </select>
+      <label class="visually-hidden" for="searchInput">Search vehicle ID</label>
+      <input id="searchInput" type="text" placeholder="Search vehicle ID..." data-testid="search-input" />
+    </div>
+  </header>
+
+  <div id="statusBanner" class="status-banner" role="status" aria-live="polite" data-testid="status-banner"></div>
+
+  <main class="layout">
+    <section class="vehicle-list" aria-label="Vehicle list">
+      <ul id="vehicleList" data-testid="vehicle-list"></ul>
+    </section>
+
+    <section class="map-panel" aria-label="Fleet map">
+      <div id="mapCanvas" class="map-canvas" data-testid="map-canvas"></div>
+    </section>
+  </main>
+
+
+  <!-- Leaflet JS via CDN -->
+  <script src="leaflet.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

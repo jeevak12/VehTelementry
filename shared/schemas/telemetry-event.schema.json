@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TelemetryEvent",
+  "type": "object",
+  "required": ["vehicleId", "timestamp", "latitude", "longitude", "speedKph", "batteryPercent"],
+  "properties": {
+    "vehicleId": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "latitude": { "type": "number", "minimum": -90, "maximum": 90 },
+    "longitude": { "type": "number", "minimum": -180, "maximum": 180 },
+    "speedKph": { "type": "number", "minimum": 0 },
+    "batteryPercent": { "type": "number", "minimum": 0, "maximum": 100 },
+    "ingestId": { "type": "string" },
+    "receivedAt": { "type": "string", "format": "date-time" }
+  }
+}

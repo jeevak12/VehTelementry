@@ -1,0 +1,15 @@
+{
+  "name": "validation-normalization",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Validation & Normalization Service (plan.md Section 7.2)",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "kafkajs": "^2.2.4",
+    "ajv": "^8.12.0",
+    "ioredis": "^5.4.1"
+  }
+}
