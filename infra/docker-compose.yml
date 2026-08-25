@@ -1,0 +1,36 @@
+# Local dev infra stand-in for the streaming backbone + stores (plan.md Sections 5, 11).
+# NOTE: single-broker Kafka + Redis + Postgres here are for LOCAL DEVELOPMENT ONLY,
+# not representative of production topology (Section 15 scalability, Section 11 storage tiers).
+
+version: "3.8"
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.6.0
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+
+  kafka:
+    image: confluentinc/cp-kafka:7.6.0
+    depends_on: [zookeeper]
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  postgres:
+    image: postgres:16-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: fleet_config
+      POSTGRES_USER: fleet
+      POSTGRES_PASSWORD: fleet_dev_only

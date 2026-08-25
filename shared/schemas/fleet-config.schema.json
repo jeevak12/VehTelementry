@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FleetConfig",
+  "type": "object",
+  "required": ["fleetId", "overspeedThresholdKph", "lowBatteryThresholdPercent", "offlineTimeoutSeconds"],
+  "properties": {
+    "fleetId": { "type": "string" },
+    "overspeedThresholdKph": { "type": "number", "minimum": 0 },
+    "lowBatteryThresholdPercent": { "type": "number", "minimum": 0, "maximum": 100 },
+    "offlineTimeoutSeconds": { "type": "integer", "minimum": 1 }
+  }
+}
